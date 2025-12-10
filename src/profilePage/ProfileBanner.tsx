@@ -23,6 +23,9 @@ const ProfileBanner: React.FC = () => {
   }, []);
 
   if (error) {
+    const handleResumeClick = () => window.open('/resume.pdf', '_blank');
+    const handleLinkedinClick = () => window.open('#', '_blank');
+
     return (
       <div className="profile-banner">
         <div className="banner-content">
@@ -31,8 +34,8 @@ const ProfileBanner: React.FC = () => {
             Full-stack developer passionate about creating innovative solutions.
           </p>
           <div className="banner-buttons">
-            <PlayButton onClick={() => window.open('#', '_blank')} label="Resume" />
-            <MoreInfoButton onClick={() => window.open('#', '_blank')} label="Linkedin" />
+            <PlayButton onClick={handleResumeClick} label="Resume" />
+            <MoreInfoButton onClick={handleLinkedinClick} label="Linkedin" />
           </div>
         </div>
       </div>
@@ -41,13 +44,8 @@ const ProfileBanner: React.FC = () => {
 
   if (!bannerData) return <div>Loading...</div>;
 
-  const handlePlayClick = () => {
-    window.open(bannerData.resumeLink.url, '_blank');
-  };
-
-  const handleLinkedinClick = () => { 
-    window.open(bannerData.linkedinLink, '_blank');
-  }
+  const handleResumeClick = () => window.open('/resume.pdf', '_blank');
+  const handleLinkedinClick = () => window.open(bannerData.linkedinLink, '_blank');
 
   return (
     <div className="profile-banner">
@@ -58,7 +56,7 @@ const ProfileBanner: React.FC = () => {
         </p>
 
         <div className="banner-buttons">
-          <PlayButton onClick={handlePlayClick} label="Resume" />
+          <PlayButton onClick={handleResumeClick} label="Resume" />
           <MoreInfoButton onClick={handleLinkedinClick} label="Linkedin" />
         </div>
       </div>
