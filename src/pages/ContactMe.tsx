@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './ContactMe.css';
-import profilePic from '../images/logo-2.png';
 import { FaEnvelope, FaPhoneAlt, FaCoffee, FaLinkedin } from 'react-icons/fa';
 import { ContactMe as IContactMe } from '../types';
 import { getContactMe } from '../queries/getContactMe';
+
+const profilePic =
+  'https://media.licdn.com/dms/image/v2/D5603AQGnR0kyjtFhTw/profile-displayphoto-scale_400_400/B56ZlY7OP8I4Ak-/0/1758133545779?e=1767225600&v=beta&t=_M8Oi9Jy4QLf-t36h-h8jedWFTtFDfbfOSwY18VcyBQ';
 
 const ContactMe: React.FC = () => {
   const [userData, setUserData] = useState<IContactMe>();
