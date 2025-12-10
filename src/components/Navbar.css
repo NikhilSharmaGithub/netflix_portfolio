@@ -24,11 +24,30 @@
   align-items: center;
 }
 
-.navbar-logo img {
-  height: 30px;
+.navbar-logo-text {
+  font-family: 'Bebas Neue', 'Helvetica Neue', 'Arial Black', sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: 0.16em;
+  color: #e50914;
+  text-transform: uppercase;
+  text-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.35),
+    0 3px 6px rgba(0, 0, 0, 0.5);
   margin-right: 30px;
   margin-left: 10px;
-  margin-top: 5px;
+  margin-top: 2px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.navbar-logo,
+.navbar-logo:visited,
+.navbar-logo:focus,
+.navbar-logo:hover,
+.navbar-logo:active {
+  text-decoration: none;
+  outline: none;
 }
 
 /* Navbar Links */
@@ -70,8 +89,9 @@
 
 /* Mobile-specific styling */
 @media (max-width: 768px) {
-  .navbar-logo img {
-    height: 20px;
+  .navbar-logo-text {
+    font-size: 22px;
+    letter-spacing: 0.14em;
     margin-right: auto;
   }
   .profile-icon {
@@ -137,8 +157,8 @@
     transform: translateX(0);
   }
 
-  .sidebar-logo img {
-    height: 30px;
+  .sidebar-logo .navbar-logo-text {
+    font-size: 24px;
     margin-bottom: 20px;
   }
 
