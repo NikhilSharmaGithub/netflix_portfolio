@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './ContactMe.css';
-import profilePic from '../images/sumanth.jpeg';
+import profilePic from '../images/logo-2.png';
 import { FaEnvelope, FaPhoneAlt, FaCoffee, FaLinkedin } from 'react-icons/fa';
 import { ContactMe as IContactMe } from '../types';
 import { getContactMe } from '../queries/getContactMe';
@@ -17,16 +17,17 @@ const ContactMe: React.FC = () => {
       } catch (err) {
         console.error('Failed to load contact data:', err);
         setError('Unable to load contact data. Please check your DatoCMS configuration.');
-        // Fallback contact data
+        // Fallback contact data (Hire Me / Contact)
         setUserData({
           profilePicture: { url: profilePic },
-          name: 'Sumanth Samala',
-          title: 'Full Stack Developer',
-          summary: 'Passionate full-stack developer with expertise in modern web technologies and cloud solutions.',
-          companyUniversity: 'Freelance Developer',
-          linkedinLink: '#',
-          email: 'contact@example.com',
-          phoneNumber: '+1 (555) 123-4567'
+          name: 'Nikhil Sharma',
+          title: 'Financial Assistant | Credit & Financial Analysis',
+          summary:
+            'Financial Assistant optimizing processes and analyzing financials; CFA L1 candidate; blending BBA + PG Business Administration for credit, compliance, and reporting.',
+          companyUniversity: 'Dial Enserch | Camosun College (Business Admin PG Cert)',
+          linkedinLink: 'https://www.linkedin.com/in/nikhil-sharma-3219512b0/',
+          email: 'Usernamenikhilsharma@gmail.com',
+          phoneNumber: '+1 672-337-1208'
         });
       }
     }
@@ -40,7 +41,7 @@ const ContactMe: React.FC = () => {
   return (
     <div className="contact-container">
       <div className="linkedin-badge-custom">
-        <img src={profilePic} alt="Sumanth Samala" className="badge-avatar" />
+        <img src={profilePic} alt="Nikhil Sharma" className="badge-avatar" />
         <div className="badge-content">
           <h3 className="badge-name">{userData?.name}</h3>
           <p className="badge-title">{userData.title}</p>
@@ -59,7 +60,7 @@ const ContactMe: React.FC = () => {
         </div>
       </div>
       <div className="contact-header">
-        <p>I'm always up for a chat or a coffee! Feel free to reach out.</p>
+        <p>Let’s collaborate on credit analysis, process optimization, and financial reporting. Reach out for consulting or full-time opportunities.</p>
       </div>
       <div className="contact-details">
         <div className="contact-item">

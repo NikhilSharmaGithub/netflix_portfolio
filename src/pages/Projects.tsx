@@ -75,21 +75,17 @@ const Projects: React.FC = () => {
         // Fallback projects data
         setProjects([
           {
-            title: 'Portfolio Website',
-            description: 'A modern portfolio website built with React and TypeScript, featuring responsive design and smooth animations.',
-            techUsed: 'React, TypeScript, CSS3, HTML5',
+            title: 'Mutual Fund Portfolio (Academic)',
+            description:
+              'Built a mutual fund portfolio to meet defined financial requirements; performed asset allocation across securities and analyzed fund Excel sheets for selection and performance.',
+            techUsed: 'Asset Allocation, Excel Analysis, Portfolio Design',
             image: { url: '/logo.svg' }
           },
           {
-            title: 'E-commerce Platform',
-            description: 'Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.',
-            techUsed: 'Node.js, Express.js, MongoDB, React',
-            image: { url: '/logo.svg' }
-          },
-          {
-            title: 'Task Management App',
-            description: 'Collaborative task management application with real-time updates and team collaboration features.',
-            techUsed: 'Vue.js, Firebase, Vuex, Tailwind CSS',
+            title: 'Personal Portfolio Management ($40K CAD)',
+            description:
+              'Manage a $40K CAD personal portfolio across Indian equities, mutual funds, and ETFs; benchmarked vs S&P500 and Sensex; perform fundamental and technical analysis and track macro indicators.',
+            techUsed: 'Equities, Mutual Funds, ETFs, Fundamental Analysis, Technical Analysis',
             image: { url: '/logo.svg' }
           }
         ]);
@@ -111,9 +107,8 @@ const Projects: React.FC = () => {
             className="project-card"
             style={{ '--delay': `${index * 0.1}s` } as React.CSSProperties}
           >
-            <img src={project.image.url} alt={project.title} className="project-image" />
             <div className="project-details">
-              <h3>{project.title}</h3>
+              <h3 className="project-title">{project.title}</h3>
               <p>{project.description}</p>
               <div className="tech-used">
                 {project.techUsed.split(', ').map((tech, i) => (
