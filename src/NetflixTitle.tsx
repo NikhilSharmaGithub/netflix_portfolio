@@ -24,7 +24,7 @@ const NetflixTitle = () => {
   return (
     <div className="netflix-container" onClick={handlePlaySound}>
       <div className={`netflix-logo-text ${isClicked ? 'animate' : ''}`}>
-        Nikhil Sharma
+        NIKHIL SHARMA
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ const WorkPermit: React.FC = () => {
         setWorkPermitData({
           visaStatus: 'Study Visa',
           expiryDate: new Date('2025-12-31'),
-          summary: 'Currently on a Study Visa allowing work in Canada',
+          summary: "I'm currently on a Study Visa 🛂, which allows me to work in Canada! 🇨🇦 Looking for the opportunities to build valuable experience and grow my career here. 🌟",
           additionalInfo: 'For any additional queries please reach me out on +1 6723371208.'
         });
       }
@@ -34,9 +34,12 @@ const WorkPermit: React.FC = () => {
       <div className="work-permit-card">
         <h2 className="work-permit-headline">🎓 Work Permit</h2>
         <p className="work-permit-summary">
-          I'm currently on a <strong>{workPermitData.visaStatus}</strong> 🛂, which allows me to work in Canada! 🇨🇦 My visa is valid until <strong>{new Date(workPermitData.expiryDate).toLocaleDateString()}</strong> 📅, giving me the opportunity to build valuable experience and grow my career here. 🌟
+          I'm currently on a <strong>{workPermitData.visaStatus}</strong> 🛂, which allows me to work in Canada! 🇨🇦 Looking
+          for the opportunities to build valuable experience and grow my career here. 🌟
         </p>
-        <p className="additional-info">{workPermitData.additionalInfo}</p>
+        <p className="additional-info">
+          For any additional queries please reach me out on +1 6723371208
+        </p>
       </div>
     </div>
   );

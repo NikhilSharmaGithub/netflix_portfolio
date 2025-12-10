@@ -1,27 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&display=swap');
+
 .netflix-container {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #141414;
+  background: radial-gradient(circle at 50% 20%, #1f1f1f 0%, #0d0d0d 45%, #000 100%);
   overflow: hidden;
 }
 
 .netflix-logo-text {
+  position: relative;
+  display: inline-block;
   font-family: 'Bebas Neue', 'Helvetica Neue', 'Arial Black', sans-serif;
-  font-size: 68px;
+  font-size: clamp(72px, 12vw, 136px);
   font-weight: 900;
-  letter-spacing: 4px;
+  letter-spacing: 0.18em;
   color: #e50914;
   text-transform: uppercase;
   text-shadow:
-    -2px -2px 0 #000,
-    2px -2px 0 #000,
-    -2px 2px 0 #000,
-    2px 2px 0 #000;
+    0 2px 1px rgba(0, 0, 0, 0.35),
+    0 6px 10px rgba(0, 0, 0, 0.55),
+    0 10px 18px rgba(0, 0, 0, 0.6);
   opacity: 0;
   transform: scale(0.9);
-  animation: fadeIn 0.5s forwards ease-in;
+  animation: fadeIn 0.6s forwards ease-in;
 }
 
 @keyframes fadeIn {
