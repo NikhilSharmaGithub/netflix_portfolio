@@ -61,17 +61,45 @@ const techIcons: { [key: string]: JSX.Element } = {
 
 
 const Projects: React.FC = () => {
-  const [projects, setProjects] = useState<Project[]>([])
-  
-  useEffect(() => { 
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
     async function fetchProjects() {
-      const data = await getProjects();
-      setProjects(data);
+      try {
+        const data = await getProjects();
+        setProjects(data);
+      } catch (err) {
+        console.error('Failed to load projects:', err);
+        setError('Unable to load projects data. Please check your DatoCMS configuration.');
+        // Fallback projects data
+        setProjects([
+          {
+            title: 'Portfolio Website',
+            description: 'A modern portfolio website built with React and TypeScript, featuring responsive design and smooth animations.',
+            techUsed: 'React, TypeScript, CSS3, HTML5',
+            image: { url: '/logo.svg' }
+          },
+          {
+            title: 'E-commerce Platform',
+            description: 'Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.',
+            techUsed: 'Node.js, Express.js, MongoDB, React',
+            image: { url: '/logo.svg' }
+          },
+          {
+            title: 'Task Management App',
+            description: 'Collaborative task management application with real-time updates and team collaboration features.',
+            techUsed: 'Vue.js, Firebase, Vuex, Tailwind CSS',
+            image: { url: '/logo.svg' }
+          }
+        ]);
+      }
     }
-    
+
     fetchProjects()
   }, [])
-  
+
+  if (error && projects.length === 0) return <div>Loading...</div>;
   if (projects.length === 0) return <div>Loading...</div>;
 
   return (

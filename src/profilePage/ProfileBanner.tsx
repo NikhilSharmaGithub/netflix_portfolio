@@ -6,17 +6,38 @@ import { getProfileBanner } from '../queries/getProfileBanner';
 import { ProfileBanner as ProfileBannerType } from '../types';
 
 const ProfileBanner: React.FC = () => {
-
-
   const [bannerData, setBannerData] = useState<ProfileBannerType | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchData() {
-      const data = await getProfileBanner();
-      setBannerData(data);
+      try {
+        const data = await getProfileBanner();
+        setBannerData(data);
+      } catch (err) {
+        console.error('Failed to load profile banner:', err);
+        setError('Unable to load profile data. Please check your DatoCMS configuration.');
+      }
     }
     fetchData();
   }, []);
+
+  if (error) {
+    return (
+      <div className="profile-banner">
+        <div className="banner-content">
+          <h1 className="banner-headline">Welcome to My Portfolio</h1>
+          <p className="banner-description">
+            Full-stack developer passionate about creating innovative solutions.
+          </p>
+          <div className="banner-buttons">
+            <PlayButton onClick={() => window.open('#', '_blank')} label="Resume" />
+            <MoreInfoButton onClick={() => window.open('#', '_blank')} label="Linkedin" />
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (!bannerData) return <div>Loading...</div>;
 

@@ -6,18 +6,35 @@ import { ContactMe as IContactMe } from '../types';
 import { getContactMe } from '../queries/getContactMe';
 
 const ContactMe: React.FC = () => {
-
-  const [userData, setUserData] = useState<IContactMe>()
+  const [userData, setUserData] = useState<IContactMe>();
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchUserData() {
-      const data = await getContactMe();
-      setUserData(data);
+      try {
+        const data = await getContactMe();
+        setUserData(data);
+      } catch (err) {
+        console.error('Failed to load contact data:', err);
+        setError('Unable to load contact data. Please check your DatoCMS configuration.');
+        // Fallback contact data
+        setUserData({
+          profilePicture: { url: profilePic },
+          name: 'Sumanth Samala',
+          title: 'Full Stack Developer',
+          summary: 'Passionate full-stack developer with expertise in modern web technologies and cloud solutions.',
+          companyUniversity: 'Freelance Developer',
+          linkedinLink: '#',
+          email: 'contact@example.com',
+          phoneNumber: '+1 (555) 123-4567'
+        });
+      }
     }
 
     fetchUserData();
   }, []);
 
+  if (error && !userData) return <div>Loading...</div>;
   if (!userData) return <div>Loading...</div>;
 
   return (

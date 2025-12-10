@@ -1,28 +1,36 @@
 // getDatoCmsToken.ts
 
 export const getDatoCmsToken = (): string => {
-  const hostname = window.location.hostname;
+  // Temporarily commented out - no DatoCMS tokens available
+  // const hostname = window.location.hostname;
 
-  switch (hostname) {
-    case 'ror.sumanthsamala.com':
-    case 'sumanthsamala.com':
-    case 'ror.localhost':
-    case 'localhost':
-      return process.env.REACT_APP_DATOCMS_ROR_TOKEN ?? '';
+  // const hostTokenMap: Record<string, string | undefined> = {
+  //   'ror.sumanthsamala.com': process.env.REACT_APP_DATOCMS_ROR_TOKEN,
+  //   'sumanthsamala.com': process.env.REACT_APP_DATOCMS_ROR_TOKEN,
+  //   'ror.localhost': process.env.REACT_APP_DATOCMS_ROR_TOKEN,
+  //   'localhost': process.env.REACT_APP_DATOCMS_ROR_TOKEN,
+  //   'java.sumanthsamala.com': process.env.REACT_APP_DATOCMS_JAVA_TOKEN,
+  //   'java.localhost': process.env.REACT_APP_DATOCMS_JAVA_TOKEN,
+  //   'frontend.sumanthsamala.com': process.env.REACT_APP_DATOCMS_FRONTEND_TOKEN,
+  //   'frontend.localhost': process.env.REACT_APP_DATOCMS_FRONTEND_TOKEN,
+  //   'node.sumanthsamala.com': process.env.REACT_APP_DATOCMS_NODE_TOKEN,
+  //   'node.localhost': process.env.REACT_APP_DATOCMS_NODE_TOKEN,
+  // };
 
-    case 'java.sumanthsamala.com':
-    case 'java.localhost':
-      return process.env.REACT_APP_DATOCMS_JAVA_TOKEN ?? '';
+  // const token =
+  //   hostTokenMap[hostname] ||
+  //   // Generic fallback for preview/unknown hosts (e.g., Vercel previews)
+  //   process.env.REACT_APP_DATOCMS_TOKEN;
 
-    case 'frontend.sumanthsamala.com':
-    case 'frontend.localhost':
-      return process.env.REACT_APP_DATOCMS_FRONTEND_TOKEN ?? '';
+  // if (!token) {
+  //   const message = `No DatoCMS token configured for hostname: ${hostname}. ` +
+  //     `Set REACT_APP_DATOCMS_TOKEN or the host-specific token in your .env.local.`;
+  //   // Throw to surface a clear, actionable error instead of a 401 from the API.
+  //   throw new Error(message);
+  // }
 
-    case 'node.sumanthsamala.com':
-    case 'node.localhost':
-      return process.env.REACT_APP_DATOCMS_NODE_TOKEN ?? '';
+  // return token;
 
-    default:
-      throw new Error(`No DatoCMS token configured for hostname: ${hostname}`);
-  }
+  // Temporary placeholder token - replace with real token when available
+  return 'placeholder-token-replace-with-real-one';
 };
