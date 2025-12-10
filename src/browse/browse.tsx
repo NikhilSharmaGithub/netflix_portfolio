@@ -39,7 +39,7 @@ const Browse: React.FC = () => {
 
   return (
     <div className="browse-container">
-      <p className='who-is-watching'>Who's Watching?</p>
+      <p className='who-is-watching'>Who's Watchingg?</p>
       <div className="profiles">
         {profiles.map((profile, index) => (
           <ProfileCard
