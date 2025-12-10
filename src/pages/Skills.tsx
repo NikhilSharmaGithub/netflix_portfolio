@@ -2,29 +2,29 @@ import React, { useEffect, useState } from 'react';
 import './Skills.css';
 import { getSkills } from '../queries/getSkills';
 
-import { FaReact, FaNodeJs, FaAws, FaDocker, FaJava } from 'react-icons/fa';
-import { SiRubyonrails, SiTypescript, SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud, SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiRabbitmq, SiImessage, SiPython } from 'react-icons/si';
+import {
+  FaChartLine,
+  FaClipboardList,
+  FaBalanceScale,
+  FaTasks,
+  FaChartPie,
+  FaFileWord,
+  FaFilePowerpoint,
+  FaFileExcel,
+} from 'react-icons/fa';
+import { SiNetlify } from 'react-icons/si';
 import { Skill } from '../types';
 
 const iconMap: { [key: string]: JSX.Element } = {
-  SiRubyonrails: <SiRubyonrails />,
-  FaNodeJs: <FaNodeJs />,
-  SiSpringboot: <SiSpringboot />,
-  FaJava: <FaJava />,
-  SiPhp: <SiPhp />,
-  FaReact: <FaReact />,
-  SiTypescript: <SiTypescript />,
-  FaAws: <FaAws />,
-  FaDocker: <FaDocker />,
-  SiPostgresql: <SiPostgresql />,
-  SiMysql: <SiMysql />,
-  SiKubernetes: <SiKubernetes />,
-  SiGooglecloud: <SiGooglecloud />,
-  SiHeroku: <SiHeroku />,
+  FaChartLine: <FaChartLine />,
+  FaClipboardList: <FaClipboardList />,
+  FaBalanceScale: <FaBalanceScale />,
+  FaTasks: <FaTasks />,
+  FaChartPie: <FaChartPie />,
+  FaFileWord: <FaFileWord />,
+  FaFilePowerpoint: <FaFilePowerpoint />,
+  FaFileExcel: <FaFileExcel />,
   SiNetlify: <SiNetlify />,
-  SiRabbitmq: <SiRabbitmq />,
-  SiImessage: <SiImessage />,
-  SiPython: <SiPython />,
 };
 
 
@@ -40,31 +40,79 @@ const Skills: React.FC = () => {
       } catch (err) {
         console.error('Failed to load skills:', err);
         setError('Unable to load skills data. Please check your DatoCMS configuration.');
-        // Fallback skills data
+        // Fallback skills data aligned to current experience, certifications, and education
         setSkillsData([
           {
-            name: 'React',
-            category: 'Frontend',
-            description: 'Building dynamic user interfaces with modern React patterns',
-            icon: 'FaReact'
+            name: 'Financial Analysis & Credit Review',
+            category: 'Finance',
+            description: 'Analyze financials/credit history; assess risk appetite and creditworthiness.',
+            icon: 'FaChartLine'
           },
           {
-            name: 'TypeScript',
-            category: 'Languages',
-            description: 'Type-safe JavaScript development',
-            icon: 'SiTypescript'
+            name: 'Process Optimization & Compliance',
+            category: 'Finance',
+            description: 'Streamline credit application flows; maintain secure document controls and policy compliance.',
+            icon: 'FaClipboardList'
           },
           {
-            name: 'Node.js',
-            category: 'Backend',
-            description: 'Server-side JavaScript runtime',
-            icon: 'FaNodeJs'
+            name: 'Equity & Fixed Income Research',
+            category: 'Finance',
+            description: 'Apply CFA L1 fundamentals across equities, fixed income, and alternatives.',
+            icon: 'FaBalanceScale'
           },
           {
-            name: 'Python',
-            category: 'Languages',
-            description: 'Versatile programming language for various applications',
-            icon: 'SiPython'
+            name: 'Accounting & Financial Statements',
+            category: 'Finance',
+            description: 'Statement analysis (per Wall Street Prep and Bloomberg Market Concepts training).',
+            icon: 'FaTasks'
+          },
+          {
+            name: 'Excel (Financial Modeling)',
+            category: 'Office Suite',
+            description: 'Models, sensitivity tables, lookups, pivots for reporting and analytics.',
+            icon: 'FaFileExcel'
+          },
+          {
+            name: 'PowerPoint (Storytelling)',
+            category: 'Office Suite',
+            description: 'Executive-ready decks for client updates, findings, and recommendations.',
+            icon: 'FaFilePowerpoint'
+          },
+          {
+            name: 'Word (Documentation)',
+            category: 'Office Suite',
+            description: 'Policies, SOPs, credit memos, and client-facing documentation.',
+            icon: 'FaFileWord'
+          },
+          {
+            name: 'Project/Program Delivery',
+            category: 'Projects & Delivery',
+            description: 'Scope, budget, delivery across 35+ web/ecommerce projects; client/stakeholder management.',
+            icon: 'SiNetlify'
+          },
+          {
+            name: 'SEO & Web Performance',
+            category: 'Projects & Delivery',
+            description: 'Organic traffic growth up to 70%; landing page and ecommerce optimization.',
+            icon: 'FaChartPie'
+          },
+          {
+            name: 'React & TypeScript',
+            category: 'Technology',
+            description: 'Modern frontend for client sites/portals; component-driven delivery.',
+            icon: 'FaChartLine'
+          },
+          {
+            name: 'Node.js & APIs',
+            category: 'Technology',
+            description: 'Backend and integration work for web projects; REST/JSON workflows.',
+            icon: 'FaClipboardList'
+          },
+          {
+            name: 'Python & Data',
+            category: 'Technology',
+            description: 'Scripting/analysis for data handling and automation (analytics coursework).',
+            icon: 'FaTasks'
           }
         ]);
       }
@@ -86,24 +134,20 @@ const Skills: React.FC = () => {
   return (
     <div className="skills-container">
       {Object.keys(skillsByCategory).map((category, index) => (
+        category === 'Technology' ? null : (
         <div key={index} className="skill-category">
           <h3 className="category-title">{category}</h3>
           <div className="skills-grid">
             {skillsByCategory[category].map((skill: any, idx: number) => (
               <div key={idx} className="skill-card">
-                <div className="icon">{iconMap[skill.icon] || <FaReact />}</div>
-                <h3 className="skill-name">
-                  {skill.name.split('').map((letter: any, i: number) => (
-                    <span key={i} className="letter" style={{ animationDelay: `${i * 0.05}s` }}>
-                      {letter}
-                    </span>
-                  ))}
-                </h3>
+                <div className="icon">{iconMap[skill.icon] || <FaChartLine />}</div>
+                <h3 className="skill-name">{skill.name}</h3>
                 <p className="skill-description">{skill.description}</p>
               </div>
             ))}
           </div>
         </div>
+      )
       ))}
     </div>
   );
