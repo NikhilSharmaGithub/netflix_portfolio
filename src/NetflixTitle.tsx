@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './NetflixTitle.css';
 import netflixSound from './netflix-sound.mp3';
 import { useNavigate } from 'react-router-dom';
-import logoImage from '../src/images/logo-2.png'; // Update with the path to your logo
-
 const NetflixTitle = () => {
   const [isClicked, setIsClicked] = useState(false);
   const navigate = useNavigate();
@@ -25,11 +23,9 @@ const NetflixTitle = () => {
 
   return (
     <div className="netflix-container" onClick={handlePlaySound}>
-      <img 
-        src={logoImage} 
-        alt="Custom Logo" 
-        className={`netflix-logo ${isClicked ? 'animate' : ''}`} 
-      />
+      <div className={`netflix-logo-text ${isClicked ? 'animate' : ''}`}>
+        Nikhil Sharma
+      </div>
     </div>
   );
 };

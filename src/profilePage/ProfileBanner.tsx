@@ -24,7 +24,7 @@ const ProfileBanner: React.FC = () => {
 
   if (error) {
     const handleResumeClick = () => window.open('/resume.pdf', '_blank');
-    const handleLinkedinClick = () => window.open('#', '_blank');
+    const handleLinkedinClick = () => window.open('https://www.linkedin.com/in/nikhil-sharma-3219512b0/', '_blank');
 
     return (
       <div className="profile-banner">
@@ -45,7 +45,7 @@ const ProfileBanner: React.FC = () => {
   if (!bannerData) return <div>Loading...</div>;
 
   const handleResumeClick = () => window.open('/resume.pdf', '_blank');
-  const handleLinkedinClick = () => window.open(bannerData.linkedinLink, '_blank');
+  const handleLinkedinClick = () => window.open('https://www.linkedin.com/in/nikhil-sharma-3219512b0/', '_blank');
 
   return (
     <div className="profile-banner">

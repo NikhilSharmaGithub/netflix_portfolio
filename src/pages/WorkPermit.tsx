@@ -16,10 +16,10 @@ const WorkPermit: React.FC = () => {
         setError('Unable to load work permit data. Please check your DatoCMS configuration.');
         // Fallback work permit data
         setWorkPermitData({
-          visaStatus: 'Skilled Worker Visa',
+          visaStatus: 'Study Visa',
           expiryDate: new Date('2025-12-31'),
-          summary: 'Currently on a Skilled Worker Visa allowing work in the UK',
-          additionalInfo: 'Valid work permit with full rights to work and reside in the United Kingdom.'
+          summary: 'Currently on a Study Visa allowing work in Canada',
+          additionalInfo: 'For any additional queries please reach me out on +1 6723371208.'
         });
       }
     }
@@ -34,7 +34,7 @@ const WorkPermit: React.FC = () => {
       <div className="work-permit-card">
         <h2 className="work-permit-headline">🎓 Work Permit</h2>
         <p className="work-permit-summary">
-          I'm currently on a <strong>{workPermitData.visaStatus}</strong> 🛂, which allows me to work in the UK! 🇬🇧 My visa is valid until <strong>{new Date(workPermitData.expiryDate).toLocaleDateString()}</strong> 📅, giving me the opportunity to build valuable experience and grow my career here. 🌟
+          I'm currently on a <strong>{workPermitData.visaStatus}</strong> 🛂, which allows me to work in Canada! 🇨🇦 My visa is valid until <strong>{new Date(workPermitData.expiryDate).toLocaleDateString()}</strong> 📅, giving me the opportunity to build valuable experience and grow my career here. 🌟
         </p>
         <p className="additional-info">{workPermitData.additionalInfo}</p>
       </div>

@@ -25,27 +25,69 @@ const WorkExperience: React.FC = () => {
         setTimeLineData([
           {
             timelineType: 'work',
-            name: 'Full Stack Developer',
-            title: 'Freelance Developer',
-            techStack: 'React, Node.js, TypeScript, AWS',
+            name: 'Dial Enserch — Dallas, TX (Remote)',
+            title: 'Financial Assistant (Full-time)',
+            techStack: 'Process optimization, Credit analysis, Compliance',
             summaryPoints: [
-              'Developed modern web applications using React and TypeScript',
-              'Built scalable backend services with Node.js and Express',
-              'Deployed applications on AWS cloud infrastructure'
+              'Boosted credit-application turnaround by 15% via process improvements.',
+              'Maintained secure document controls aligned with policies and regulations.',
+              'Analyzed financials and credit reports for 250+ clients to assess risk.'
             ],
-            dateRange: '2023 - Present'
+            dateRange: 'Jun 2024 – Present'
+          },
+          {
+            timelineType: 'work',
+            name: 'R Marketing Minds — Dallas, TX',
+            title: 'Business Project Manager & Web Development Consultant (Freelance)',
+            techStack: 'Project leadership, Web development, SEO, Client management',
+            summaryPoints: [
+              'Managed a team of 4; delivered 35+ web/ecommerce/branding projects (2024).',
+              'Owned lifecycle from requirements, scope, budget to delivery.',
+              'SEO impact: lifted organic traffic up to 70% in 6 months; 65% repeat business.'
+            ],
+            dateRange: 'Dec 2022 – Present'
+          },
+          {
+            timelineType: 'work',
+            name: 'Sonam Enterprise — Jalandhar, India',
+            title: 'Sales Intern',
+            techStack: 'Sales ops, Market research, Events',
+            summaryPoints: [
+              'Organized promos and campaigns improving local brand visibility.',
+              'Prepared tailored proposals/quotes; handled inquiries and follow-ups.',
+              'Market research and pitching contributed to ~75% sales lift during internship.'
+            ],
+            dateRange: 'Apr 2022 – Aug 2022'
           },
           {
             timelineType: 'education',
-            name: 'Bachelor of Technology',
-            title: 'Computer Science',
-            techStack: 'Java, Python, Data Structures',
+            name: 'Camosun College — Post Graduate Certificate, Business Administration',
+            title: 'Victoria, Canada',
+            techStack: 'Business administration, Finance, Quantitative methods',
             summaryPoints: [
-              'Completed degree in Computer Science',
-              'Gained strong foundation in programming and algorithms',
-              'Participated in various coding competitions and hackathons'
+              'Post Graduate Certificate in Business Administration (Jan 2025 – Aug 2026).'
             ],
-            dateRange: '2019 - 2023'
+            dateRange: 'Jan 2025 – Aug 2026'
+          },
+          {
+            timelineType: 'education',
+            name: 'CFA Institute — CFA Level I Registered Candidate',
+            title: 'Exam on 14 Nov 2025',
+            techStack: 'Alternatives, Fixed Income, Equity, Ethics',
+            summaryPoints: [
+              'Registered candidate; studying for Level I exam (Nov 14, 2025).'
+            ],
+            dateRange: 'Jun 2025 – Present'
+          },
+          {
+            timelineType: 'education',
+            name: 'PTU University — Bachelor of Business Administration (BBA)',
+            title: 'Jalandhar, India',
+            techStack: 'Business administration, Finance, General',
+            summaryPoints: [
+              'BBA with foundation in business administration and finance.'
+            ],
+            dateRange: 'Jun 2021 – Jun 2024'
           }
         ]);
       }

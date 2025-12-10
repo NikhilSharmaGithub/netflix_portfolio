@@ -26,25 +26,32 @@ const Certifications: React.FC = () => {
         // Fallback certifications data
         setCertifications([
           {
-            title: 'AWS Certified Developer',
-            issuer: 'Amazon Web Services',
-            issuedDate: '2024',
-            link: '#',
+            title: 'Bloomberg Market Concepts',
+            issuer: 'Bloomberg',
+            issuedDate: '2025',
+            link: 'https://portal.bloombergforeducation.com/certificates/TdXHYSECM6JSVuaXTustWuxs',
             iconName: 'university'
           },
           {
-            title: 'React Developer Certification',
-            issuer: 'Meta',
-            issuedDate: '2023',
-            link: '#',
+            title: 'Environmental Social Governance',
+            issuer: 'Bloomberg',
+            issuedDate: '2025',
+            link: 'https://portal.bloombergforeducation.com/certificates/n48HvNkZN3uAY6MCG4dpXPue',
+            iconName: 'university'
+          },
+          {
+            title: 'Google Data Analytics (Specialization)',
+            issuer: 'Coursera',
+            issuedDate: '2025',
+            link: 'https://www.coursera.org/account/accomplishments/specialization/4N1ZEMJV70MJ',
             iconName: 'coursera'
           },
           {
-            title: 'Full Stack Web Development',
-            issuer: 'Udemy',
-            issuedDate: '2023',
-            link: '#',
-            iconName: 'udemy'
+            title: 'Accounting & Financial Statement Analysis',
+            issuer: 'Wall Street Prep',
+            issuedDate: '2025',
+            link: 'https://certification.wallstreetprep.com/1d0508db-cb05-426e-831c-3c3de7fdf7df#acc.d32BxRwk',
+            iconName: 'university'
           }
         ]);
       }
