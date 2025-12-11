@@ -31,7 +31,7 @@ const ProfileBanner: React.FC = () => {
         <div className="banner-content">
           <h1 className="banner-headline">Welcome to My Portfolio</h1>
           <p className="banner-description">
-            Full-stack developer passionate about creating innovative solutions.
+            Financial Assistant optimizing processes and analyzing financials for clients. 3+ years of experience in client handling, financial & market data analysis, disclosure and reporting in a fast-paced Agile team
           </p>
           <div className="banner-buttons">
             <PlayButton onClick={handleResumeClick} label="Resume" />
